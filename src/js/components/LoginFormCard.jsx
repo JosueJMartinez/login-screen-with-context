@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  ButtonGroup,
+  Typography,
+  TextField,
+} from "@material-ui/core";
 
 import styles from "../../styles/LoginFormCardStyles";
 
@@ -49,8 +51,8 @@ class LoginFormCard extends Component {
               size="small"
               aria-label="sign-in/sign-up button group"
             >
-              <Button>Login</Button>
-              <Button>Sign Up</Button>
+              <Button color="primary">Login</Button>
+              <Button color="secondary">Sign Up</Button>
             </ButtonGroup>
           </CardActions>
         </form>

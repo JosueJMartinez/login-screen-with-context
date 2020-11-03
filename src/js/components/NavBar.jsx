@@ -8,7 +8,7 @@ import {
   Switch,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
+
 import SearchIcon from "@material-ui/icons/Search";
 
 import styles from "../../styles/NavBarStyles";
@@ -25,7 +25,7 @@ class NavBar extends Component {
               color="inherit"
               aria-label="Open drawer"
             >
-              <MenuIcon />
+              <span>🇲🇽</span>
             </IconButton>
             <Typography
               className={classes.title}
@@ -36,14 +36,7 @@ class NavBar extends Component {
               LDC
             </Typography>
             <Switch />
-            <Typography
-              className={classes.title}
-              variant="h6"
-              color="inherit"
-              noWrap
-            >
-              Light Mode
-            </Typography>
+
             <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>

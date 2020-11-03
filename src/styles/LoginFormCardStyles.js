@@ -1,4 +1,4 @@
-const styles = {
+const styles = theme => ({
   root: {
     minWidth: 275,
   },
@@ -16,6 +16,6 @@ const styles = {
     paddingLeft: "16px",
     paddingRight: "16px",
   },
-};
+});
 
 export default styles;

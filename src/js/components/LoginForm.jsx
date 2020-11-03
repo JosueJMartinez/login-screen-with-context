@@ -15,10 +15,12 @@ import {
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
-import styles from "../../styles/LoginFormCardStyles";
+import styles from "../../styles/LoginForm";
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   render() {
     return <div></div>;
   }
 }
+
+export default withStyles(styles)(LoginForm);

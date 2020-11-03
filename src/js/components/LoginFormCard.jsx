@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withStyles } from "@material-ui/core/styles";
 import {
   Card,
   CardActions,
@@ -9,6 +8,7 @@ import {
   Typography,
   TextField,
 } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 
 import styles from "../../styles/LoginFormCardStyles";
 

@@ -13,6 +13,9 @@ import {
   MenuItem,
   Select,
 } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+
+import styles from "../../styles/LoginFormCardStyles";
 
 export default class LoginForm extends Component {
   render() {

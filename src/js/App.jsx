@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 
 import NavBar from "./components/NavBar";
 import LoginFormCard from "./components/LoginFormCard";
+import LoginForm from "./components/LoginForm";
 
 const styles = {
   root: {
@@ -20,7 +21,9 @@ function App(props) {
   return (
     <div className={classes.root}>
       <NavBar />
-      <Grid
+
+      <LoginForm className={classes.grid} />
+      {/* <Grid
         className={classes.grid}
         container
         justify="center"
@@ -28,8 +31,9 @@ function App(props) {
       >
         <Grid item xs={11} sm={7} md={5} lg={4}>
           <LoginFormCard />
+          
         </Grid>
-      </Grid>
+      </Grid> */}
     </div>
   );
 }

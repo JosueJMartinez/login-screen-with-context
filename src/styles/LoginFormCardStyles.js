@@ -2,7 +2,6 @@ const styles = theme => ({
   root: {
     minWidth: 275,
   },
-
   title: {
     paddingBottom: "20px",
   },

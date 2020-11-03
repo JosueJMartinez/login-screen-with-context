@@ -3,7 +3,7 @@ import { fade } from "@material-ui/core/styles/colorManipulator";
 const styles = theme => ({
   root: {
     width: "100%",
-		position:'absolute'
+    // position:'absolute'
   },
   grow: {
     flexGrow: 1,

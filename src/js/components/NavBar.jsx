@@ -25,7 +25,7 @@ class NavBar extends Component {
               color="inherit"
               aria-label="Open drawer"
             >
-              <span>🇲🇽</span>
+              <span>🇪🇸 </span>
             </IconButton>
             <Typography
               className={classes.title}

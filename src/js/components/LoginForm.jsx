@@ -28,11 +28,31 @@ class LoginForm extends Component {
             <LockOutlinedIcon />
           </Avatar>
           <Typography variant="h5">Sign In</Typography>
-          <Select>
-            <MenuItem>English</MenuItem>
-            <MenuItem>French</MenuItem>
-            <MenuItem>Spanish</MenuItem>
+					<InputLabel id="label">Age</InputLabel>
+          <Select value='english'>
+            <MenuItem value='English'>English</MenuItem>
+            <MenuItem value='French'>French</MenuItem>
+            <MenuItem value='Spanish'>Spanish</MenuItem>
           </Select>
+					<form className={classes.form}>
+						<FormControl margin="normal" required fullWidth>
+							<InputLabel htmlFor='email'>
+								Email
+							</InputLabel>
+							<Input id='email' name='email' autoFocus />
+						</FormControl>
+						<FormControl margin="normal" required fullWidth>
+							<InputLabel htmlFor='password'>
+									Password
+								</InputLabel>
+								<Input id='password' name='password'  />
+						</FormControl>
+						<FormControlLabel control={<Checkbox color="primary" />} label="Remember Me" />
+						<Button variant='contained' type='submit' fullWidth color='primary' className={classes.submit} >
+							Sign In
+						</Button>
+						
+					</form>
         </Paper>
       </main>
     );

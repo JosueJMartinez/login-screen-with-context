@@ -42,10 +42,9 @@ const words = {
 
 function LoginForm(props) {
   const { language, setLang } = useContext(LanguageContext);
-
   const { classes } = props;
-
   const { email, signIn, password, remember } = words[language];
+
   return (
     <main className={classes.root}>
       <CssBaseline />

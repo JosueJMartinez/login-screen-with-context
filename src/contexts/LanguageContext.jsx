@@ -3,9 +3,9 @@ import React, { Component, createContext } from "react";
 export const LanguageContext = createContext();
 
 export class LanguageProvider extends Component {
-  state = { language: "french" };
+  state = { language: "spanish" };
+
   setLang = lang => {
-    console.log(lang);
     this.setState({ language: lang });
   };
   render() {
@@ -18,3 +18,9 @@ export class LanguageProvider extends Component {
     );
   }
 }
+
+export const withLanguageContext = Component => props => (
+  <LanguageContext.Consumer>
+    {context => <Component languageContext={context} {...props} />}
+  </LanguageContext.Consumer>
+);

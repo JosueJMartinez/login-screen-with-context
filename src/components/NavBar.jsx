@@ -12,12 +12,29 @@ import SearchIcon from "@material-ui/icons/Search";
 
 import styles from "../styles/NavBarStyles";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { withLanguageContext } from "../contexts/LanguageContext";
+
+const words = {
+  english: {
+    search: "Search...",
+    lang: "🇺🇸",
+  },
+  spanish: {
+    search: "Buscar...",
+    lang: "🇪🇸",
+  },
+  french: {
+    search: "Chercher...",
+    lang: "🇫🇷",
+  },
+};
 
 class NavBar extends Component {
   static contextType = ThemeContext;
   render() {
-    const { classes } = this.props;
+    const { classes, languageContext } = this.props;
     const { isDarkMode, toggleIsDarkMode } = this.context;
+    const { search, lang } = words[languageContext.language];
 
     return (
       <div className={classes.root}>
@@ -31,7 +48,7 @@ class NavBar extends Component {
               color="inherit"
               aria-label="Open drawer"
             >
-              <span>🇪🇸 </span>
+              <span>{lang}</span>
             </IconButton>
             <Typography
               className={classes.title}
@@ -49,7 +66,7 @@ class NavBar extends Component {
                 <SearchIcon />
               </div>
               <InputBase
-                placeholder="Search…"
+                placeholder={search}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
@@ -63,4 +80,4 @@ class NavBar extends Component {
   }
 }
 
-export default withStyles(styles)(NavBar);
+export default withLanguageContext(withStyles(styles)(NavBar));

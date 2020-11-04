@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import NavBar from "./components/NavBar";
 import LoginForm from "./components/LoginForm";
 import PageContent from "./components/PageContent";
-import { ThemeProvider } from "../contexts/ThemeContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 const styles = {
   // root: {

@@ -10,14 +10,14 @@ import {
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 
-import styles from "../../styles/NavBarStyles";
-import { ThemeContext } from "../../contexts/ThemeContext";
+import styles from "../styles/NavBarStyles";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 class NavBar extends Component {
   static contextType = ThemeContext;
   render() {
     const { classes } = this.props;
-    const { isDarkMode } = this.context;
+    const { isDarkMode, toggleIsDarkMode } = this.context;
 
     return (
       <div className={classes.root}>
@@ -41,7 +41,7 @@ class NavBar extends Component {
             >
               LDC
             </Typography>
-            <Switch />
+            <Switch onClick={toggleIsDarkMode} />
 
             <div className={classes.grow} />
             <div className={classes.search}>

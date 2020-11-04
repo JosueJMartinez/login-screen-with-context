@@ -16,7 +16,7 @@ import {
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { withStyles } from "@material-ui/core/styles";
 
-import styles from "../../styles/LoginFormStyles";
+import styles from "../styles/LoginFormStyles";
 
 class LoginForm extends Component {
   render() {

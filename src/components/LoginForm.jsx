@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import {
   Avatar,
   Button,
@@ -40,61 +40,59 @@ const words = {
   },
 };
 
-class LoginForm extends Component {
-  static contextType = LanguageContext;
+function LoginForm(props) {
+  const { language, setLang } = useContext(LanguageContext);
 
-  render() {
-    const { classes } = this.props;
-    const { language, setLang } = this.context;
-    const { email, signIn, password, remember } = words[language];
-    return (
-      <main className={classes.root}>
-        <CssBaseline />
-        <Paper className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography variant="h5">{signIn}</Typography>
-          <FormControl>
-            <Select
-              labelId="language"
-              id="language"
-              value={language}
-              onClick={e => setLang(e.target.value)}
-            >
-              <MenuItem value="english">English</MenuItem>
-              <MenuItem value="french">French</MenuItem>
-              <MenuItem value="spanish">Spanish</MenuItem>
-            </Select>
+  const { classes } = props;
+
+  const { email, signIn, password, remember } = words[language];
+  return (
+    <main className={classes.root}>
+      <CssBaseline />
+      <Paper className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography variant="h5">{signIn}</Typography>
+        <FormControl>
+          <Select
+            labelId="language"
+            id="language"
+            value={language}
+            onClick={e => setLang(e.target.value)}
+          >
+            <MenuItem value="english">English</MenuItem>
+            <MenuItem value="french">French</MenuItem>
+            <MenuItem value="spanish">Spanish</MenuItem>
+          </Select>
+        </FormControl>
+
+        <form className={classes.form}>
+          <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="email">{email}</InputLabel>
+            <Input id="email" name="email" autoFocus />
           </FormControl>
-
-          <form className={classes.form}>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">{email}</InputLabel>
-              <Input id="email" name="email" autoFocus />
-            </FormControl>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="password">{password}</InputLabel>
-              <Input id="password" name="password" />
-            </FormControl>
-            <FormControlLabel
-              control={<Checkbox color="primary" />}
-              label={remember}
-            />
-            <Button
-              variant="contained"
-              type="submit"
-              fullWidth
-              color="primary"
-              className={classes.submit}
-            >
-              {signIn}
-            </Button>
-          </form>
-        </Paper>
-      </main>
-    );
-  }
+          <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="password">{password}</InputLabel>
+            <Input id="password" name="password" />
+          </FormControl>
+          <FormControlLabel
+            control={<Checkbox color="primary" />}
+            label={remember}
+          />
+          <Button
+            variant="contained"
+            type="submit"
+            fullWidth
+            color="primary"
+            className={classes.submit}
+          >
+            {signIn}
+          </Button>
+        </form>
+      </Paper>
+    </main>
+  );
 }
 
 export default withStyles(styles)(LoginForm);

@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import NavBar from "./components/NavBar";
 import LoginForm from "./components/LoginForm";
 import PageContent from "./components/PageContent";
+import { ThemeProvider } from "../contexts/ThemeContext";
 
 const styles = {
   // root: {
@@ -18,11 +19,12 @@ function App(props) {
   const { classes } = props;
 
   return (
-    <PageContent>
-      <NavBar />
-
-      <LoginForm className={classes.grid} />
-    </PageContent>
+    <ThemeProvider>
+      <PageContent>
+        <NavBar />
+        <LoginForm className={classes.grid} />
+      </PageContent>
+    </ThemeProvider>
   );
 }
 

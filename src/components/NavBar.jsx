@@ -16,15 +16,15 @@ import { withLanguageContext } from "../contexts/LanguageContext";
 
 const words = {
   english: {
-    search: "Search...",
+    search: "Search",
     lang: "🇺🇸",
   },
   spanish: {
-    search: "Buscar...",
+    search: "Buscar",
     lang: "🇪🇸",
   },
   french: {
-    search: "Chercher...",
+    search: "Chercher",
     lang: "🇫🇷",
   },
 };
@@ -66,7 +66,7 @@ class NavBar extends Component {
                 <SearchIcon />
               </div>
               <InputBase
-                placeholder={search}
+                placeholder={`${search}...`}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,

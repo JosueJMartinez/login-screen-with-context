@@ -5,7 +5,9 @@ export const LanguageContext = createContext();
 export function LanguageProvider(props) {
   const [language, setLanguage] = useState("spanish");
 
-  const setLang = lang => setLanguage(lang);
+  const setLang = lang => {
+		lang && setLanguage(lang)
+	};
 
   return (
     <LanguageContext.Provider value={{ language, setLang }}>
